@@ -28,8 +28,13 @@ Material:
         m_Texture: {fileID: 2800000, guid: 11aa22bb33cc44dd55ee66ff77889902, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: a1b2c3d4e5f60718293a4b5c6d7e8f02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BumpScale: 0.9
     - _Cutoff: 0.5
     - _Smoothness: 0.32
     - _TileMeters: 2.0
