@@ -28,7 +28,7 @@ public class HojaCorrediza : MonoBehaviour
 
     [Header("Agarre")]
     [Tooltip("Distancia máxima (m) entre tu mano y la manija para poder agarrarla")]
-    public float radioAgarre = 0.10f;
+    public float radioAgarre = 0.15f;
     [Tooltip("Largo de la barra de la manija (m)")]
     public float largoManija = 0.16f;
     [Tooltip("0 = la hoja sigue la mano exactamente. Valores altos (ej. 25) suavizan el movimiento")]
@@ -78,12 +78,15 @@ public class HojaCorrediza : MonoBehaviour
             for (int i = 0; i < transform.childCount; i++)
             {
                 Transform hijo = transform.GetChild(i);
-                if (hijo.name.StartsWith("Manija")) { manija = hijo; break; }
+                if (hijo.name.Contains("Manija")) { manija = hijo; break; }
             }
         }
         if (marco == null && transform.parent != null)
         {
-            Transform m = transform.parent.Find("Marco");
+            // nombres tipo "V301301_Hoja_Interior" -> "V301301_Marco" (o "Hoja_Interior" -> "Marco")
+            string nombreMarco = name.Replace("Hoja_Interior", "Marco").Replace("Hoja_Exterior", "Marco");
+            Transform m = transform.parent.Find(nombreMarco);
+            if (m == null) m = transform.parent.Find("Marco");
             if (m != null) marco = m.GetComponent<Renderer>();
         }
     }
