@@ -25609,7 +25609,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 17.5
+  m_Intensity: 8.75
   m_Range: 5.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34177,7 +34177,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 22.5
+  m_Intensity: 11.25
   m_Range: 9.906
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34271,7 +34271,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 22.5
+  m_Intensity: 11.25
   m_Range: 9.906
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34365,7 +34365,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 22.5
+  m_Intensity: 11.25
   m_Range: 9.906
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34459,7 +34459,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 22.5
+  m_Intensity: 11.25
   m_Range: 9.906
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34553,7 +34553,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 22.5
+  m_Intensity: 11.25
   m_Range: 9.906
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -34647,7 +34647,7 @@ Light:
   serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 22.5
+  m_Intensity: 11.25
   m_Range: 9.906
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -41311,7 +41311,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -41889,7 +41889,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -42467,7 +42467,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -43045,7 +43045,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -43623,7 +43623,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -44201,7 +44201,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -44779,7 +44779,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -45357,7 +45357,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -45935,7 +45935,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 11.25
+  m_Intensity: 16.875
   m_Range: 4.5
   m_SpotAngle: 110
   m_InnerSpotAngle: 70
@@ -46693,7 +46693,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 17.5
+  m_Intensity: 26.25
   m_Range: 8
   m_SpotAngle: 150
   m_InnerSpotAngle: 109
@@ -47451,7 +47451,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 17.5
+  m_Intensity: 26.25
   m_Range: 8
   m_SpotAngle: 150
   m_InnerSpotAngle: 109
@@ -48209,7 +48209,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 17.5
+  m_Intensity: 26.25
   m_Range: 8
   m_SpotAngle: 150
   m_InnerSpotAngle: 109
@@ -48967,7 +48967,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 0.82, b: 0.55, a: 1}
-  m_Intensity: 17.5
+  m_Intensity: 26.25
   m_Range: 8
   m_SpotAngle: 150
   m_InnerSpotAngle: 109
@@ -49726,7 +49726,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -49814,7 +49814,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118032,7 +118032,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120887,7 +120887,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122154,7 +122154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125336,7 +125336,7 @@ Light:
   serializedVersion: 13
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 125
+  m_Intensity: 187.5
   m_Range: 10
   m_SpotAngle: 90
   m_InnerSpotAngle: 55
@@ -126704,7 +126704,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130780,7 +130780,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139524,7 +139524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140011,7 +140011,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147168,7 +147168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147331,7 +147331,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157147,7 +157147,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158675,7 +158675,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160668,7 +160668,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160717,7 +160717,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161062,7 +161062,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: c4e5a11a0b2c4d6e8f9012345678ab03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
