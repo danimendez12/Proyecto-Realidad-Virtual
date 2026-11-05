@@ -20,9 +20,9 @@ public class Casa1LightSwitch : MonoBehaviour
     [SerializeField] Renderer plate;
 
     [Tooltip("Lever tilt around local Z when the lights are on. Negative leans the tip to the right: |/")]
-    [SerializeField] float onTilt = -32f;
+    [SerializeField] float onTilt = -120f;
     [Tooltip("Lever tilt around local Z when the lights are off. Positive leans the tip to the left: |\\")]
-    [SerializeField] float offTilt = 32f;
+    [SerializeField] float offTilt = 120;
     [SerializeField] float flipSeconds = 0.2f;
     [SerializeField] bool startsOn = true;
 
