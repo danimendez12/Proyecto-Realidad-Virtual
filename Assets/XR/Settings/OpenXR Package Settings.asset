@@ -86,7 +86,7 @@ MonoBehaviour:
   nameUi: 'Android XR: AR Anchor'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables
+  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c36843bac48b29469f79baf3c98f9b6, type: 3}
-  m_Name: AndroidXRHandMeshData Standalone
+  m_Name: AndroidXRHandMeshData Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRHandMeshData
   m_enabled: 0
   nameUi: 'Android XR: Hand Mesh Data'
@@ -1402,18 +1402,8 @@ MonoBehaviour:
   features:
   - {fileID: -6501968737729203052}
   - {fileID: 3485569903112061513}
-  - {fileID: -4228962635802982420}
-  - {fileID: 4371944630287658989}
   - {fileID: 4253970512482227870}
-  - {fileID: 2165573431837782338}
-  - {fileID: 5789763732116394198}
-  - {fileID: -1687426426426610953}
   - {fileID: 7414112590678258884}
-  - {fileID: 7798734114704711788}
-  - {fileID: -2637412821574216253}
-  - {fileID: 3082299260249708787}
-  - {fileID: 8994522619233799311}
-  - {fileID: -6414360617322645685}
   - {fileID: -3473668139161958244}
   - {fileID: 5034717563973003200}
   - {fileID: -6242893730197324035}
@@ -1755,7 +1745,7 @@ MonoBehaviour:
   nameUi: 'Android XR: AR Anchor'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables
+  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
@@ -2386,7 +2376,7 @@ MonoBehaviour:
   - {fileID: -7198649115723619663}
   - {fileID: 2546328774826241967}
   - {fileID: 6812422873100967291}
-  - {fileID: -2326236171136471006}
+  - {fileID: 8266996062119543184}
   - {fileID: -7978153619390590184}
   - {fileID: -3174146171330592142}
   - {fileID: -2496694669134284649}
@@ -2397,7 +2387,7 @@ MonoBehaviour:
   - {fileID: -5570152591506812478}
   - {fileID: 5490374345322571846}
   - {fileID: 6771893732732872684}
-  - {fileID: -7653464425498615521}
+  - {fileID: -6414360617322645685}
   - {fileID: 7961392539510747518}
   - {fileID: 3861495970001881594}
   - {fileID: 6181922723267607103}
