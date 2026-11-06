@@ -314,7 +314,7 @@ public class Casa1LightSwitch : MonoBehaviour
             var owner = clusters[c][0];
             for (var s = 1; s < clusters[c].Count; s++)
             {
-                if (clusters[c][s].GetInstanceID() < owner.GetInstanceID())
+                if (clusters[c][s].GetEntityId().CompareTo(owner.GetEntityId()) < 0)
                     owner = clusters[c][s];
             }
 
