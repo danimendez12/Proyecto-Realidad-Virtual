@@ -39,6 +39,12 @@ public class PuertaVR : MonoBehaviour
     public float largoManija = 0.12f;
     [Tooltip("Distancia máxima (m) entre tu mano y la manija para poder agarrarla")]
     public float radioAgarre = 0.15f;
+    [Tooltip("La manija cambia de color y vibra el control cuando acercas la mano")]
+    public bool resaltarAlAcercar = true;
+    public bool vibrarAlAcercar = true;
+    public Color colorManija = new Color(0.15f, 0.15f, 0.15f);
+    public Color colorResaltado = new Color(1f, 0.85f, 0.1f);
+    public Color colorAgarrada = new Color(0.2f, 0.9f, 0.3f);
 
     [Header("Movimiento")]
     [Tooltip("0 = la puerta sigue la mano exactamente. Valores altos (ej. 20) suavizan")]
@@ -83,6 +89,10 @@ public class PuertaVR : MonoBehaviour
     Vector3 dirInicio;
     float aperturaInicio;
     readonly bool[] gripAnterior = new bool[2];
+    readonly bool[] cercaAnterior = new bool[2];
+    readonly List<Renderer> rendManijas = new List<Renderer>();
+    readonly List<Vector3> escalasManijas = new List<Vector3>();
+    int nivelResalte;
     float proximoLog;
 
     static Vector3 Horizontal(Vector3 v)
@@ -218,7 +228,9 @@ public class PuertaVR : MonoBehaviour
 
             Renderer r = h.GetComponent<Renderer>();
             if (materialManija != null) r.sharedMaterial = materialManija;
-            else r.material.color = new Color(0.15f, 0.15f, 0.15f);
+            else r.material.color = colorManija;
+            rendManijas.Add(r);
+            escalasManijas.Add(h.transform.localScale);
         }
 
         manijas.Add(h.transform);
@@ -296,6 +308,7 @@ public class PuertaVR : MonoBehaviour
                 && DistanciaAManijas(mano.position) <= radioAgarre)
             {
                 manoActiva = i;
+                if (vibrarAlAcercar) Vibrar(i, 0.5f, 0.08f);
                 dirInicio = Horizontal(mano.position - pivot.position);
                 aperturaInicio = apertura;
                 objetivo = apertura;
@@ -304,11 +317,49 @@ public class PuertaVR : MonoBehaviour
             gripAnterior[i] = hayMano && presionado;
         }
 
+        // Guía visual y háptica: la manija se resalta cuando la mano está a su alcance
+        if (resaltarAlAcercar && rendManijas.Count > 0)
+        {
+            bool cerca = false;
+            for (int i = 0; i < 2; i++)
+            {
+                Transform mano;
+                bool presionado;
+                bool hayMano = manos.TryGetMano(i, out mano, out presionado);
+                bool c = hayMano && DistanciaAManijas(mano.position) <= radioAgarre;
+                if (c && !cercaAnterior[i] && manoActiva < 0 && vibrarAlAcercar) Vibrar(i, 0.25f, 0.05f);
+                cercaAnterior[i] = c;
+                if (c) cerca = true;
+            }
+            AplicarResalte(manoActiva >= 0 ? 2 : (cerca ? 1 : 0));
+        }
+
         // Aplicar
         if (velocidadSeguimiento <= 0f) apertura = objetivo;
         else apertura = Mathf.Lerp(apertura, objetivo, 1f - Mathf.Exp(-velocidadSeguimiento * Time.deltaTime));
 
         pivot.rotation = Quaternion.AngleAxis(sentido * apertura, Vector3.up) * rotCerrada;
+    }
+
+    void AplicarResalte(int nivel)
+    {
+        if (nivel == nivelResalte) return;
+        nivelResalte = nivel;
+        for (int i = 0; i < rendManijas.Count; i++)
+        {
+            Vector3 b = escalasManijas[i];
+            float f = nivel == 0 ? 1f : 1.6f;
+            rendManijas[i].transform.localScale = new Vector3(b.x * f, b.y, b.z * f);
+            if (materialManija == null)
+                rendManijas[i].material.color = nivel == 0 ? colorManija : (nivel == 1 ? colorResaltado : colorAgarrada);
+        }
+    }
+
+    static void Vibrar(int mano, float amplitud, float duracion)
+    {
+        UnityEngine.XR.InputDevice d = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(
+            mano == 0 ? UnityEngine.XR.XRNode.LeftHand : UnityEngine.XR.XRNode.RightHand);
+        if (d.isValid) d.SendHapticImpulse(0u, amplitud, duracion);
     }
 
     void Soltar()
