@@ -217,23 +217,48 @@ public class PuertaVR : MonoBehaviour
 
         h.transform.SetParent(pivot, true);
         h.transform.position = posMundo;
-        h.transform.rotation = Quaternion.identity; // cilindro siempre vertical
+        h.transform.rotation = Quaternion.identity;
 
         if (manijaVisible)
         {
-            // el cilindro de Unity mide 2 de alto: escala Y = largo / 2. Se compensa la escala del padre
             Vector3 ps = pivot.lossyScale;
             float k = 1f / Mathf.Max(0.0001f, (Mathf.Abs(ps.x) + Mathf.Abs(ps.y) + Mathf.Abs(ps.z)) / 3f);
             h.transform.localScale = new Vector3(0.025f * k, largoManija * 0.5f * k, 0.025f * k);
 
             Renderer r = h.GetComponent<Renderer>();
-            if (materialManija != null) r.sharedMaterial = materialManija;
-            else r.material.color = colorManija;
+            r.sharedMaterial = materialManija != null
+                ? materialManija
+                : CrearMaterialDeColor(colorManija);
+
             rendManijas.Add(r);
             escalasManijas.Add(h.transform.localScale);
         }
 
         manijas.Add(h.transform);
+    }
+
+    /// <summary>Busca un shader que funcione en el pipeline actual.</summary>
+    static Shader ShaderDeColor()
+    {
+        Shader s = Shader.Find("Universal Render Pipeline/Lit");
+        if (s == null) s = Shader.Find("HDRP/Lit");
+        if (s == null) s = Shader.Find("Standard");
+        if (s == null) s = Shader.Find("Unlit/Color"); // último recurso
+        return s;
+    }
+
+    static Material CrearMaterialDeColor(Color c)
+    {
+        Material m = new Material(ShaderDeColor());
+        AplicarColorMaterial(m, c);
+        return m;
+    }
+
+    /// <summary>Escribe el color en el nombre correcto según el pipeline (URP usa _BaseColor, Built-in usa _Color).</summary>
+    static void AplicarColorMaterial(Material m, Color c)
+    {
+        if (m.HasProperty("_BaseColor")) m.SetColor("_BaseColor", c);
+        if (m.HasProperty("_Color"))     m.SetColor("_Color", c);
     }
 
     float DistanciaAManijas(Vector3 punto)
@@ -350,8 +375,13 @@ public class PuertaVR : MonoBehaviour
             Vector3 b = escalasManijas[i];
             float f = nivel == 0 ? 1f : 1.6f;
             rendManijas[i].transform.localScale = new Vector3(b.x * f, b.y, b.z * f);
+
             if (materialManija == null)
-                rendManijas[i].material.color = nivel == 0 ? colorManija : (nivel == 1 ? colorResaltado : colorAgarrada);
+            {
+                Color col = nivel == 0 ? colorManija
+                        : (nivel == 1 ? colorResaltado : colorAgarrada);
+                AplicarColorMaterial(rendManijas[i].material, col);
+            }
         }
     }
 
