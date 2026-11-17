@@ -129,6 +129,11 @@ export function Move({
                 </button>
               </div>
             </header>
+            <img
+              className="stair-photo"
+              src="/fotos/fachada.jpg"
+              alt="Escalera exterior de Casa 1, del estacionamiento a la planta alta"
+            />
             <StairFigure mode={demo.stairs} />
             <p className="fine">
               {demo.stairs === "box"

@@ -1,5 +1,3 @@
-import { HouseElevation } from "../components/HouseElevation";
-
 export function Cover({ onEnter }: { onEnter: () => void }) {
   return (
     <section className="cover">
@@ -24,7 +22,13 @@ export function Cover({ onEnter }: { onEnter: () => void }) {
         </button>
         <p className="source">SampleScene · Unity 6000.5.8f1</p>
       </div>
-      <HouseElevation selected={null} glow />
+      <figure className="hero">
+        <img
+          src="/fotos/fachada.jpg"
+          alt="Fachada de Casa 1, con la escalera exterior y el estacionamiento"
+        />
+        <figcaption>Fachada de Casa 1</figcaption>
+      </figure>
     </section>
   );
 }

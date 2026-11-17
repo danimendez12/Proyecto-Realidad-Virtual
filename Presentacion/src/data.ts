@@ -11,7 +11,7 @@ export const SCREENS = [
     id: "casa",
     num: "02",
     label: "La casa",
-    note: "El corte está en Y = 4 m, entre Sala y SalaUp. Casas adicionales se menciona y no se recorre.",
+    note: "Las fotos son de la escena. La fachada incluye la escalera. Los dos interiores son la misma sala con distinto acabado; el corte de plantas sigue en Y = 4 m.",
   },
   {
     id: "moverse",
@@ -72,6 +72,24 @@ export const FLOORS: Record<
       "Focos, lámparas y postes siguen encendidos",
       "Casas adicionales está en la escena y queda fuera de este recorrido",
     ],
+  },
+};
+
+export const VIEWS: Record<FloorId, { src: string; alt: string; caption: string }> = {
+  baja: {
+    src: "/fotos/interior-calido.jpg",
+    alt: "Sala con cielo de madera, sofá claro, mesa y cocina al fondo",
+    caption: "Sala · cielo de madera",
+  },
+  alta: {
+    src: "/fotos/interior-claro.jpg",
+    alt: "La misma sala con piso de baldosa, cielo liso y otra luz",
+    caption: "Sala · otro acabado",
+  },
+  exterior: {
+    src: "/fotos/fachada.jpg",
+    alt: "Fachada de Casa 1, con la escalera exterior y el estacionamiento",
+    caption: "Fachada y escalera",
   },
 };
 

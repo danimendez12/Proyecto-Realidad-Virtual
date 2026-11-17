@@ -1,7 +1,8 @@
-import { HouseElevation } from "../components/HouseElevation";
 import { ScreenHeader } from "../components/ScreenHeader";
-import { FLOORS } from "../data";
-import type { DemoState } from "../types";
+import { FLOORS, VIEWS } from "../data";
+import type { DemoState, FloorId } from "../types";
+
+const ORDER: FloorId[] = ["baja", "alta", "exterior"];
 
 export function House({
   demo,
@@ -11,6 +12,7 @@ export function House({
   setFloor: (floor: DemoState["floor"]) => void;
 }) {
   const floor = FLOORS[demo.floor];
+  const view = VIEWS[demo.floor];
 
   return (
     <section className="split">
@@ -18,7 +20,7 @@ export function House({
         <ScreenHeader
           kicker="02  ·  La casa"
           title="Dos plantas y el exterior."
-          lede="Casa 1 es el recorrido. Elige una zona del corte para ver qué vive ahí."
+          lede="Casa 1 es el recorrido. Elige una zona y mira la foto de la escena."
         />
         <article className="detail">
           <p className="detail-place">{floor.place}</p>
@@ -32,7 +34,30 @@ export function House({
         </article>
         <p className="source">Casa1 · Sala · SalaUp · Exterior</p>
       </div>
-      <HouseElevation selected={demo.floor} onSelect={setFloor} />
+      <figure className="shot">
+        <div className="shot-frame">
+          <img
+            key={view.src}
+            className={demo.floor === "exterior" ? "wide" : undefined}
+            src={view.src}
+            alt={view.alt}
+          />
+          <figcaption>{view.caption}</figcaption>
+        </div>
+        <div className="shot-bar">
+          {ORDER.map((id) => (
+            <button
+              key={id}
+              type="button"
+              className="chip-button"
+              aria-pressed={demo.floor === id}
+              onClick={() => setFloor(id)}
+            >
+              {FLOORS[id].name}
+            </button>
+          ))}
+        </div>
+      </figure>
     </section>
   );
 }
