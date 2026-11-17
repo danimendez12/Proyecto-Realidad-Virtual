@@ -48,18 +48,39 @@ const CONTROLS = [
 
 type ControlId = (typeof CONTROLS)[number]["id"];
 
+const PHOTOS: Record<ControlId, { src: string; alt: string; caption: string }> = {
+  x: {
+    src: "/fotos/control-izquierdo.png",
+    alt: "Cara del control izquierdo: palanca, botón de menú, X y Y",
+    caption: "Cara izquierda · X",
+  },
+  gatillo: {
+    src: "/fotos/controles.png",
+    alt: "Los dos controles: el gatillo se ve en el izquierdo, de perfil",
+    caption: "Gatillo",
+  },
+  grip: {
+    src: "/fotos/controles.png",
+    alt: "Los dos controles: el grip es el botón lateral del izquierdo",
+    caption: "Grip",
+  },
+  menu: {
+    src: "/fotos/controles.png",
+    alt: "Controles de Meta Quest usados para apuntar al menú de mano",
+    caption: "Controles del visor",
+  },
+};
+
 export function Controls() {
   const [id, setId] = useState<ControlId>("x");
   const control = CONTROLS.find((item) => item.id === id) ?? CONTROLS[0];
+  const photo = PHOTOS[id];
 
   return (
     <section className="controls">
       <figure className="control-photo">
-        <img
-          src="/fotos/controles.png"
-          alt="Controles de Meta Quest: el izquierdo de perfil, con grip y gatillo, y el derecho de frente, con A, B y palanca"
-        />
-        <figcaption>Controles del visor</figcaption>
+        <img key={photo.src} src={photo.src} alt={photo.alt} />
+        <figcaption>{photo.caption}</figcaption>
       </figure>
       <div className="control-copy">
         <ScreenHeader
@@ -91,7 +112,7 @@ export function Controls() {
           </ul>
         </article>
         <p className="fine">
-          A, B, la palanca y el botón de sistema no disparan funciones de Casa 1. La salida de la cinta quedó sin botón.
+          La Y, el botón de las tres rayas, A, B y la palanca no disparan funciones de Casa 1. La salida de la cinta quedó sin botón.
         </p>
       </div>
     </section>

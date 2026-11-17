@@ -17,7 +17,7 @@ export const SCREENS = [
     id: "controles",
     num: "03",
     label: "Controles",
-    note: "X abre el menú. El gatillo confirma el panel y marca la cinta. El grip agarra puerta, ventana e interruptor. A, B y la palanca no tienen script propio.",
+    note: "X abre el menú: está en la cara del control izquierdo, junto a la Y. El gatillo confirma el panel y marca la cinta. El grip agarra puerta, ventana e interruptor. Y, las tres rayas, A, B y la palanca no tienen script propio.",
   },
   {
     id: "moverse",
