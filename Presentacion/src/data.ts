@@ -14,28 +14,34 @@ export const SCREENS = [
     note: "Las fotos son de la escena. La fachada incluye la escalera. Los dos interiores son la misma sala con distinto acabado; el corte de plantas sigue en Y = 4 m.",
   },
   {
-    id: "moverse",
+    id: "controles",
     num: "03",
+    label: "Controles",
+    note: "X abre el menú. El gatillo confirma el panel y marca la cinta. El grip agarra puerta, ventana e interruptor. A, B y la palanca no tienen script propio.",
+  },
+  {
+    id: "moverse",
+    num: "04",
     label: "Moverse",
     note: "El menú queda fijo a 1.5 m y 0.5 m bajo la vista. Los saltos son Segundo piso, Sala y Exterior. La caja de la escalera se cambia por la malla.",
   },
   {
     id: "tocar",
-    num: "04",
+    num: "05",
     label: "Tocar",
     note: "Grip en la manija. Si sueltas la puerta bajo 3°, se cierra. La hoja recorre su ancho menos 7.7 cm. El interruptor de la planta baja apunta hacia abajo.",
   },
   {
     id: "decidir",
-    num: "05",
+    num: "06",
     label: "Decidir",
     note: "La noche tarda 4 segundos. Los postes se quedan encendidos y el relleno exterior se apaga. La cinta solo mide lo que tiene collider.",
   },
   {
     id: "cierre",
-    num: "06",
+    num: "07",
     label: "Cierre",
-    note: "Para una pregunta, salta con 1–6. Esta presentación no abre el visor ni un build de Unity.",
+    note: "Para una pregunta, salta con 1–7. Esta presentación no abre el visor ni un build de Unity.",
   },
 ] as const;
 
@@ -127,13 +133,15 @@ export const ORIGINAL_WALL = {
 
 export const QUESTIONS: { q: string; screen: number; detail: string }[] = [
   { q: "¿Dónde se corta la casa?", screen: 1, detail: "En Y = 4 m, entre Sala y SalaUp." },
-  { q: "¿Cómo aparece el menú?", screen: 2, detail: "A 1.5 m y medio metro bajo la vista." },
-  { q: "¿A dónde se salta?", screen: 2, detail: "Segundo piso, Sala y Exterior." },
-  { q: "¿Por qué se pisan las escaleras?", screen: 2, detail: "La caja del tramo se cambia por la malla." },
-  { q: "¿La puerta se queda abierta?", screen: 3, detail: "Bajo 3° se cierra sola al soltar." },
-  { q: "¿Cuánto corre la ventana?", screen: 3, detail: "El ancho de la hoja menos 7.7 cm." },
-  { q: "¿Cuánto tarda la noche?", screen: 4, detail: "4 segundos, con SmoothStep." },
-  { q: "¿Qué acabados hay?", screen: 4, detail: "Los diez materiales del menú de paredes." },
+  { q: "¿Qué botón abre el menú?", screen: 2, detail: "La X del control izquierdo." },
+  { q: "¿Con qué se agarra la puerta?", screen: 2, detail: "Con el grip, cerca de la manija." },
+  { q: "¿Cómo aparece el menú?", screen: 3, detail: "A 1.5 m y medio metro bajo la vista." },
+  { q: "¿A dónde se salta?", screen: 3, detail: "Segundo piso, Sala y Exterior." },
+  { q: "¿Por qué se pisan las escaleras?", screen: 3, detail: "La caja del tramo se cambia por la malla." },
+  { q: "¿La puerta se queda abierta?", screen: 4, detail: "Bajo 3° se cierra sola al soltar." },
+  { q: "¿Cuánto corre la ventana?", screen: 4, detail: "El ancho de la hoja menos 7.7 cm." },
+  { q: "¿Cuánto tarda la noche?", screen: 5, detail: "4 segundos, con SmoothStep." },
+  { q: "¿Qué acabados hay?", screen: 5, detail: "Los diez materiales del menú de paredes." },
 ];
 
 export const STACK = [

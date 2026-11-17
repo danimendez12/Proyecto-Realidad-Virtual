@@ -31,7 +31,7 @@ export function Decide({
   return (
     <section className="decide">
       <ScreenHeader
-        kicker="05  ·  Decidir"
+        kicker="06  ·  Decidir"
         title="Luz, acabado y medida."
         lede="El día cambia en cuatro segundos, la pared toma uno de los diez materiales y la cinta marca dos puntos."
       />

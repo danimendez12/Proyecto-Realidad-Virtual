@@ -37,9 +37,9 @@ export function Move({
   return (
     <section className="move">
       <ScreenHeader
-        kicker="03  ·  Moverse"
+        kicker="04  ·  Moverse"
         title="El menú queda delante de la vista."
-        lede="Se abre con el botón del control, a 1.5 m y medio metro bajo los ojos. Desde ahí se salta, se cambia la luz o se mide."
+        lede="Se abre con la X del control izquierdo, a 1.5 m y medio metro bajo los ojos. Desde ahí se salta, se cambia la luz o se mide."
       />
       <div className="move-grid">
         <article className="panel-card">

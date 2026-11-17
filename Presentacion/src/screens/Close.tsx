@@ -5,7 +5,7 @@ export function Close({ go }: { go: (index: number) => void }) {
   return (
     <section className="close">
       <ScreenHeader
-        kicker="06  ·  Cierre"
+        kicker="07  ·  Cierre"
         title="Para responder, se vuelve a la pantalla."
         lede="Cada pregunta salta al demo que ya vimos. El visor sigue siendo SampleScene; esta sala solo lo cuenta."
       />
@@ -32,7 +32,7 @@ export function Close({ go }: { go: (index: number) => void }) {
           </p>
         </aside>
       </div>
-      <p className="source">Teclas 1–6 en cualquier momento</p>
+      <p className="source">Teclas 1–7 en cualquier momento</p>
     </section>
   );
 }

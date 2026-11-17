@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SCREENS } from "./data";
 import { Close } from "./screens/Close";
+import { Controls } from "./screens/Controls";
 import { Cover } from "./screens/Cover";
 import { Decide } from "./screens/Decide";
 import { House } from "./screens/House";
@@ -29,9 +30,12 @@ export function App() {
       } else if (event.key === "n" || event.key === "N") {
         event.preventDefault();
         setNotes((current) => !current);
-      } else if (event.key >= "1" && event.key <= "6") {
-        event.preventDefault();
-        setIndex(Number(event.key) - 1);
+      } else if (event.key >= "1" && event.key <= "9") {
+        const next = Number(event.key) - 1;
+        if (next < SCREENS.length) {
+          event.preventDefault();
+          setIndex(next);
+        }
       } else if (event.key === "Escape") {
         event.preventDefault();
         setIndex(0);
@@ -72,21 +76,22 @@ export function App() {
           {index === 1 && (
             <House demo={demo} setFloor={(floor) => setDemo((current) => ({ ...current, floor }))} />
           )}
-          {index === 2 && <Move demo={demo} setDemo={setDemo} />}
-          {index === 3 && <Touch demo={demo} setDemo={setDemo} />}
-          {index === 4 && <Decide demo={demo} setDemo={setDemo} />}
-          {index === 5 && <Close go={setIndex} />}
+          {index === 2 && <Controls />}
+          {index === 3 && <Move demo={demo} setDemo={setDemo} />}
+          {index === 4 && <Touch demo={demo} setDemo={setDemo} />}
+          {index === 5 && <Decide demo={demo} setDemo={setDemo} />}
+          {index === 6 && <Close go={setIndex} />}
         </main>
         <footer className="footer">
           <p>
             <kbd>←</kbd> <kbd>→</kbd> pantallas
             <span className="dot">·</span>
-            <kbd>1</kbd>–<kbd>6</kbd> saltar
+            <kbd>1</kbd>–<kbd>{SCREENS.length}</kbd> saltar
             <span className="dot">·</span>
             <kbd>N</kbd> {notes ? "ocultar notas" : "notas"}
           </p>
           <p>
-            {screen.num} / 06
+            {screen.num} / {String(SCREENS.length).padStart(2, "0")}
           </p>
         </footer>
         <div className="progress" aria-hidden="true">

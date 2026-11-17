@@ -16,7 +16,7 @@ export function Touch({
   return (
     <section className="touch">
       <ScreenHeader
-        kicker="04  ·  Tocar"
+        kicker="05  ·  Tocar"
         title="La casa responde a la mano."
         lede="Puertas y ventanas se agarran con el Grip. El interruptor enciende solo las luces de su cuarto."
       />
