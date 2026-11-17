@@ -1,4 +1,4 @@
-# Presentación de Casa 1
+# Presentación de El proyecto
 
 Recorrido interactivo para explicar el proyecto de realidad virtual. No modifica las escenas ni los scripts de Unity.
 

@@ -7,7 +7,7 @@ export function Cover({ onEnter }: { onEnter: () => void }) {
           Una casa que se puede <em>recorrer</em>.
         </h1>
         <p className="lede">
-          Casa 1 se camina, se abre y se cambia de acabado antes de construirla.
+          La casa de este proyecto se camina, se abre y se cambia de acabado antes de construirla.
           Esta presentación enseña lo que ya hace el visor.
         </p>
         <ul className="chips">
@@ -25,9 +25,9 @@ export function Cover({ onEnter }: { onEnter: () => void }) {
       <figure className="hero">
         <img
           src="/fotos/fachada.jpg"
-          alt="Fachada de Casa 1, con la escalera exterior y el estacionamiento"
+          alt="Fachada de El proyecto, con la escalera exterior y el estacionamiento"
         />
-        <figcaption>Fachada de Casa 1</figcaption>
+        <figcaption>Fachada de El proyecto</figcaption>
       </figure>
     </section>
   );

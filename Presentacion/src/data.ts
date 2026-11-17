@@ -71,7 +71,7 @@ export const FLOORS: Record<
   },
   exterior: {
     name: "Exterior",
-    place: "Afuera de Casa 1",
+    place: "Afuera de El proyecto",
     body: "Aquí están el sol, el cielo y la niebla. De noche se apaga el relleno y se quedan los postes y las lámparas.",
     facts: [
       "El relleno exterior baja a cero de noche",
@@ -94,14 +94,14 @@ export const VIEWS: Record<FloorId, { src: string; alt: string; caption: string 
   },
   exterior: {
     src: "/fotos/fachada.jpg",
-    alt: "Fachada de Casa 1, con la escalera exterior y el estacionamiento",
+    alt: "Fachada de El proyecto, con la escalera exterior y el estacionamiento",
     caption: "Fachada y escalera",
   },
 };
 
 export const DESTINATIONS: { id: DestinationId; num: string; name: string; where: string }[] = [
   { id: "piso", num: "1", name: "Segundo piso", where: "Sobre Sala, en la planta alta" },
-  { id: "sala", num: "2", name: "Sala", where: "Planta baja de Casa 1" },
+  { id: "sala", num: "2", name: "Sala", where: "Planta baja de El proyecto" },
   { id: "exterior", num: "3", name: "Exterior", where: "Afuera de la casa" },
 ];
 

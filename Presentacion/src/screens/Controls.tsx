@@ -50,7 +50,7 @@ type ControlId = (typeof CONTROLS)[number]["id"];
 
 const PHOTOS: Record<ControlId, { src: string; alt: string; caption: string }> = {
   x: {
-    src: "/fotos/control-izquierdo.png",
+    src: "/fotos/control-izquierdo X Highlight.png",
     alt: "Cara del control izquierdo: palanca, botón de menú, X y Y",
     caption: "Cara izquierda · X",
   },
@@ -60,12 +60,12 @@ const PHOTOS: Record<ControlId, { src: string; alt: string; caption: string }> =
     caption: "Gatillo",
   },
   grip: {
-    src: "/fotos/controles.png",
+    src: "/fotos/controles grip HighLight.png",
     alt: "Los dos controles: el grip es el botón lateral del izquierdo",
     caption: "Grip",
   },
   menu: {
-    src: "/fotos/controles.png",
+    src: "/fotos/control-izquierdo X Highlight.png",
     alt: "Controles de Meta Quest usados para apuntar al menú de mano",
     caption: "Controles del visor",
   },
@@ -86,7 +86,7 @@ export function Controls() {
         <ScreenHeader
           kicker="03  ·  Controles"
           title="Tres botones y un menú."
-          lede="Casa 1 usa la X, el gatillo y el grip. El resto del control no tiene un script propio."
+          lede="El proyecto usa la X, el gatillo y el grip. El resto del control no tiene un script propio."
         />
         <div className="shot-bar" role="group" aria-label="Botones">
           {CONTROLS.map((item) => (
@@ -112,7 +112,7 @@ export function Controls() {
           </ul>
         </article>
         <p className="fine">
-          La Y, el botón de las tres rayas, A, B y la palanca no disparan funciones de Casa 1. La salida de la cinta quedó sin botón.
+          La Y, el botón de las tres rayas, A, B y la palanca no disparan funciones de El proyecto. La salida de la cinta quedó sin botón.
         </p>
       </div>
     </section>

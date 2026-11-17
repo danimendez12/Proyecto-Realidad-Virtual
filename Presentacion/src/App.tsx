@@ -47,13 +47,13 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    document.title = `${screen.label} — Casa 1`;
+    document.title = `${screen.label} — El proyecto`;
   }, [screen.label]);
 
   return (
     <div className="shell">
       <nav className="rail" aria-label="Pantallas">
-        <p className="brand">Casa 1</p>
+        <p className="brand">El proyecto</p>
         {SCREENS.map((item, itemIndex) => (
           <button
             key={item.id}

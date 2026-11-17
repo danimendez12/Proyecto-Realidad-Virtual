@@ -20,7 +20,7 @@ export function House({
         <ScreenHeader
           kicker="02  ·  La casa"
           title="Dos plantas y el exterior."
-          lede="Casa 1 es el recorrido. Elige una zona y mira la foto de la escena."
+          lede="El proyecto es el recorrido. Elige una zona y mira la foto de la escena."
         />
         <article className="detail">
           <p className="detail-place">{floor.place}</p>
