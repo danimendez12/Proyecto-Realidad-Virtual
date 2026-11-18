@@ -13043,8 +13043,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 2
+  m_fontSizeBase: 2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13116,7 +13116,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de3fd77bf854c9f9bc59d05349efe33, type: 2}
+  - {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14309,7 +14309,9 @@ MonoBehaviour:
   line: {fileID: 0}
   label: {fileID: 619361952}
   markerPrefab: {fileID: 0}
-  labelHeightOffset: 0.08
+  labelHeightOffset: 0.22
+  distanciaEtiqueta: 1
+  etiquetaSiempreVisible: 1
   lineMaterial: {fileID: 0}
   colorLinea: {r: 1, g: 0.9, b: 0.2, a: 1}
   anchoLinea: 0.012
@@ -14325,6 +14327,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   maxDistance: 30
   raizMedible: {fileID: 0}
+  depurar: 1
+  teclaPrueba: 25
   audioSource: {fileID: 0}
   pointClip: {fileID: 0}
   finishClip: {fileID: 0}

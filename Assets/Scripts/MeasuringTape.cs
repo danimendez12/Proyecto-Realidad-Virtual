@@ -32,6 +32,10 @@ public class MeasuringTape : MonoBehaviour
     public TMP_Text label;                 // TextMeshPro 3D (World Space)
     public GameObject markerPrefab;        // opcional: si se deja vacío se crean esferitas
     public float labelHeightOffset = 0.08f;
+    [Tooltip("Cuánto se acerca el texto hacia tu cabeza (m), para que no quede metido en el piso o la pared")]
+    public float distanciaEtiqueta = 0.15f;
+    [Tooltip("El texto se dibuja siempre encima de la geometría (no lo tapan paredes ni piso)")]
+    public bool etiquetaSiempreVisible = true;
 
     [Header("Línea de medición")]
     [Tooltip("Opcional: un material Unlit. Si se deja vacío se usa uno por defecto")]
@@ -57,6 +61,12 @@ public class MeasuringTape : MonoBehaviour
     [Tooltip("Objeto raíz con las paredes, pisos y muebles que se pueden medir (ej. Casa1)")]
     public Transform raizMedible;
 
+    [Header("Pruebas / diagnóstico")]
+    [Tooltip("Escribe en la Console qué recibe y qué falta (botón, trigger, referencias)")]
+    public bool depurar = true;
+    [Tooltip("Tecla para activar/desactivar la medición SIN usar el menú (prueba en el simulador). None = desactivada")]
+    public Key teclaPrueba = Key.K;
+
     [Header("Feedback")]
     public AudioSource audioSource;
     public AudioClip pointClip;
@@ -71,6 +81,7 @@ public class MeasuringTape : MonoBehaviour
     LineRenderer rayLine;
     Transform mira;
     Renderer miraRenderer;
+    Vector3 anclaEtiqueta;
 
     void Awake()
     {
@@ -79,6 +90,12 @@ public class MeasuringTape : MonoBehaviour
         CrearGuia();
         SetVisible(false);
         OcultarGuia();
+        if (etiquetaSiempreVisible && label != null)
+        {
+            // los shaders de TextMeshPro leen este valor: 8 = Always (se dibuja encima de todo)
+            label.fontMaterial.SetInt("unity_GUIZTestMode", (int)UnityEngine.Rendering.CompareFunction.Always);
+        }
+        if (depurar) ChequearReferencias("Awake");
     }
 
     void OnEnable()
@@ -100,6 +117,8 @@ public class MeasuringTape : MonoBehaviour
         if (triggerAction != null) triggerAction.action.performed -= OnTrigger;
         if (exitAction != null) exitAction.action.performed -= OnExit;
         OcultarGuia();
+        if (depurar && active)
+            Debug.LogWarning("[Cinta] El componente se desactivó con la medición activa. ¿Está dentro del menú que se oculta? Ponlo en un objeto que siempre esté activo.");
     }
 
     void OnDestroy()
@@ -205,6 +224,11 @@ public class MeasuringTape : MonoBehaviour
     // ---- Para el OnClick del botón "Medida" del menú ----
     public void ActivarMedicion()
     {
+        if (depurar)
+        {
+            Debug.Log("[Cinta] ActivarMedicion() llamado desde el botón/tecla.");
+            ChequearReferencias("ActivarMedicion");
+        }
         active = true;
         ResetMedicion();
         if (ocultarAlActivar != null)
@@ -226,6 +250,7 @@ public class MeasuringTape : MonoBehaviour
 
     void OnTrigger(InputAction.CallbackContext ctx)
     {
+        if (depurar) Debug.Log("[Cinta] Trigger recibido. Medición activa=" + active + ", estado=" + state);
         if (!active) return;
 
         if (state == State.Done) { ResetMedicion(); return; }
@@ -266,6 +291,11 @@ public class MeasuringTape : MonoBehaviour
 
     void Update()
     {
+        if (teclaPrueba != Key.None && Keyboard.current != null && Keyboard.current[teclaPrueba].wasPressedThisFrame)
+        {
+            if (active) DesactivarMedicion(); else ActivarMedicion();
+        }
+
         // Si el usuario vuelve a abrir el menú, salimos del modo medición
         if (active && MenuVisible()) { DesactivarMedicion(); return; }
 
@@ -285,7 +315,12 @@ public class MeasuringTape : MonoBehaviour
     void LateUpdate()
     {
         if (label != null && label.gameObject.activeSelf && cam != null)
+        {
+            // el texto se saca de la superficie, hacia donde estás tú, y un poco hacia arriba
+            Vector3 haciaCamara = (cam.position - anclaEtiqueta).normalized;
+            label.transform.position = anclaEtiqueta + haciaCamara * distanciaEtiqueta + Vector3.up * labelHeightOffset;
             label.transform.rotation = Quaternion.LookRotation(label.transform.position - cam.position);
+        }
     }
 
     bool TryGetPoint(out Vector3 point, out Vector3 normal)
@@ -313,12 +348,9 @@ public class MeasuringTape : MonoBehaviour
 
         if (label != null)
         {
-            Vector3 d = end - pointA;
-            float total = d.magnitude;
-            float horiz = new Vector3(d.x, 0f, d.z).magnitude;
-            float alto = Mathf.Abs(d.y);
-            label.text = total.ToString("0.00") + " m\n<size=60%>horiz. " + horiz.ToString("0.00") + " · alto " + alto.ToString("0.00") + "</size>";
-            label.transform.position = (a + b) * 0.5f + Vector3.up * labelHeightOffset;
+            float total = (end - pointA).magnitude;
+            label.text = total.ToString("0.00") + " m";
+            anclaEtiqueta = (a + b) * 0.5f;
         }
     }
 
@@ -348,6 +380,29 @@ public class MeasuringTape : MonoBehaviour
     {
         if (line) line.enabled = v;
         if (label) label.gameObject.SetActive(v);
+    }
+
+    void ChequearReferencias(string cuando)
+    {
+        string pre = "[Cinta/" + cuando + "] ";
+        if (rayOrigin == null)
+            Debug.LogWarning(pre + "'Ray Origin' está vacío: no habrá rayo ni se podrá medir. Arrastra el control derecho (o su Attach/Ray Origin).");
+        if (triggerAction == null)
+            Debug.LogWarning(pre + "'Trigger Action' está vacío: no se podrán marcar los puntos.");
+        if (label == null)
+            Debug.LogWarning(pre + "'Label' está vacío: no se verá el número de la medida.");
+        if (ocultarAlActivar == null || ocultarAlActivar.Length == 0)
+            Debug.LogWarning(pre + "'Ocultar Al Activar' está vacío: el menú no se ocultará al pulsar Medida.");
+        else
+        {
+            foreach (GameObject go in ocultarAlActivar)
+            {
+                if (go != null && transform.IsChildOf(go.transform))
+                    Debug.LogWarning(pre + "Este script está dentro de '" + go.name + "'. Al ocultar el menú también se desactiva el script y no medirá.");
+            }
+        }
+        if (!gameObject.activeInHierarchy)
+            Debug.LogWarning(pre + "El objeto '" + name + "' está inactivo.");
     }
 
     void Feedback(AudioClip clip)
